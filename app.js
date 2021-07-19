@@ -5,10 +5,17 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.get("/", function(req, res){
-  res.send("Hello");
+app.set("view engine", "ejs");
+
+app.get("/", function (req, res) {
+  var today = new Date();
+  var currentDay = today.getDay();
+  //var day = "";
+  var day = new Date().toLocaleString("en-us", { weekday: "long" });
+
+  res.render("list", { kindOfDay: day });
 });
 
-app.listen(3000, function(){
-  console.log("Server started on port 3000.");
+app.listen(3000, function () {
+  console.log("running on port 3000");
 });
