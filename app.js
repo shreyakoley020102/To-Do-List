@@ -9,9 +9,15 @@ app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
   var today = new Date();
-  var currentDay = today.getDay();
+
+  var options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  };
   //var day = "";
-  var day = new Date().toLocaleString("en-us", { weekday: "long" });
+
+  var day = today.toLocaleDateString("en-us", options);
 
   res.render("list", { kindOfDay: day });
 });
