@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-var items = [];
+var items = ["Buy food", "cook food"];
 
 app.set("view engine", "ejs");
 
@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
 
   var day = today.toLocaleDateString("en-us", options);
 
-  res.render("list", { kindOfDay: day, newListItem: items });
+  res.render("list", { kindOfDay: day, newListItems: items });
 });
 
 app.post("/", function (req, res) {
