@@ -29,10 +29,18 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
+  console.log(req.body);
   let item = req.body.newItem;
+
+  if (req.body.list === "Work") {
+    workItems.push(item);
+    res.redirect("/work");
+  } else {
+    items.push(item);
+    res.redirect("/");
+  }
+
   //console.log(item);
-  items.push(item);
-  res.redirect("/");
 });
 
 app.get("/work", function (req, res) {
