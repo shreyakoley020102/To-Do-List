@@ -14,16 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-  let today = new Date();
-
-  let options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  };
-  //var day = "";
-
-  let day = today.toLocaleDateString("en-us", options);
+  
 
   res.render("list", { listTitle: day, newListItems: items });
 });
