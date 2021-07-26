@@ -1,5 +1,5 @@
 //jshint esversion:6
-module.exports="Hello World"
+module.exports=getDate
 
 
 function getDate(){
