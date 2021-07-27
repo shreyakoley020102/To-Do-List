@@ -1,8 +1,5 @@
 //jshint esversion:6
-module.exports.getDate=getDate;
-
-
-function getDate(){
+module.exports.getDate=function (){
 let today = new Date();
 
   let options = {
@@ -12,14 +9,12 @@ let today = new Date();
   };
   //var day = "";
 
-  let day = today.toLocaleDateString("en-us", options)
+  return today.toLocaleDateString("en-us", options)
   ;
-  return day;
+
 }
 
-module.exports.getDay=getDay;
-
-function getDay(){
+module.exports.getDay=function (){
   let today = new Date();
 
   let options = {
@@ -27,9 +22,8 @@ function getDay(){
   };
   //var day = "";
 
-  let day = today.toLocaleDateString("en-us", options)
+  return today.toLocaleDateString("en-us", options)
   ;
-  return day;
 }
 
 console.log(module.exports);
